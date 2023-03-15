@@ -55,26 +55,15 @@ public class GameManager : MonoBehaviour
     // I use this method like winning and losing because both have identical code in this practice project
     public void GameOver()
     {
-        // StartCoroutine("GameOverCoroutine");
-        // Time.timeScale = 0;
         gameUI.ShowRestartButton();
         gameOverTime = true;
         inputAvailable = false;
-        
-        // TODO: show lose UI and check record
     }
-     /*private IEnumerable GameOverCoroutine()
-     {
-        yield return new WaitForSecondsRealtime(0.3f);
-
-        Time.timeScale = 0;
-        gameUI.ShowRestartButton();
-     }*/
+     
 
     public void Restart()
     {
         RestartSound.Play();
         SceneManager.LoadScene(0, LoadSceneMode.Single);
-        // TODO: Check if the best record is beaten and if yeas than resave the best record
     }
 }
